@@ -57,6 +57,7 @@ async fn main() -> Result<()> {
             None => (None, None),
         }
     };
+    println!("RATING BOUNDS:\n\tLOWER:{}\n\tUPPER:{}", rating_lower_bound.unwrap(), rating_upper_bound.unwrap());
     let tactic = get_new_puzzle(ChessTacticRequest {
         rating_gte: rating_lower_bound,
         rating_lte: rating_upper_bound,
