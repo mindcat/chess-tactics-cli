@@ -1,0 +1,1 @@
+{"id":"zwxft","moves":["e8c6","d5e7","g8f8","e7c6"],"fen":"4b1k1/p4ppp/8/2pN4/8/2P1K3/PP5P/8 b - - 1 32","popularity":91,"tags":["crushing","endgame","fork","master","short"],"game_link":"https://lichess.org/K3pR3Rda/black#64","rating":753,"rating_deviation":104,"number_plays":76,"all_moves":[],"max_ply":0,"white_rating":null,"black_rating":null,"piece_count":13,"solid_moves":0}
