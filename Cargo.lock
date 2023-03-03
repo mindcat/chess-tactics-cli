@@ -1075,7 +1075,7 @@ dependencies = [
 
 [[package]]
 name = "tactics-trainer-cli"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "anyhow",
  "clap",

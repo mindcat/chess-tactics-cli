@@ -201,6 +201,7 @@ struct ChessTacticRequest {
 
 async fn get_new_puzzle(request: ChessTacticRequest) -> Result<ChessTactic> {
     let client = reqwest::Client::new();
+    println!("DEBUGGING--{:?}", &request);
     let tactic: ChessTactic = client
         .post(get_api_endpoint())
         .header("User-Agent", "tactics-trainer-cli")
@@ -209,7 +210,7 @@ async fn get_new_puzzle(request: ChessTacticRequest) -> Result<ChessTactic> {
         .await?
         .json()
         .await?;
-    // dbg!(&tactic);
+    dbg!(&tactic);
     return Ok(tactic);
 }
 
