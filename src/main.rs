@@ -201,7 +201,7 @@ struct ChessTacticRequest {
 
 async fn get_new_puzzle(request: ChessTacticRequest) -> Result<ChessTactic> {
     let client = reqwest::Client::new();
-    println!("DEBUGGING--{:?}", &request);
+    println!("DEBUGGING:\n\tGTE={:?}\n\tLTE={:?}", &request.rating_gte.unwrap(), &request.rating_lte.unwrap());
     let tactic: ChessTactic = client
         .post(get_api_endpoint())
         .header("User-Agent", "tactics-trainer-cli")
