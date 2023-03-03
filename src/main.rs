@@ -46,6 +46,7 @@ async fn main() -> Result<()> {
                                 .expect(&format!("Failed to parse {} as a rating", s))
                         };
                         (Some(parse_rating(first)), Some(parse_rating(second)));
+                        println!("CLI INPUT:\n\tFIRST='{}'\n\tSECOND='{}'", &first, &second);
                     }
                     _ => {
                         panic!("Could not parse rating, make sure it's in the form '500-1200'")
@@ -201,7 +202,7 @@ struct ChessTacticRequest {
 
 async fn get_new_puzzle(request: ChessTacticRequest) -> Result<ChessTactic> {
     let client = reqwest::Client::new();
-    println!("DEBUGGING:\n\tGTE={:?}\n\tLTE={:?}", &request.rating_gte.unwrap(), &request.rating_lte.unwrap());
+    println!("JSON INIT:\n\tGTE={:?}\n\tLTE={:?}", &request.rating_gte.unwrap(), &request.rating_lte.unwrap());
     let tactic: ChessTactic = client
         .post(get_api_endpoint())
         .header("User-Agent", "tactics-trainer-cli")
