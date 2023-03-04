@@ -52,7 +52,7 @@ async fn main() -> Result<()> {
                         panic!("Could not parse rating, make sure it's in the form '500-1200'")
                     }
                 };
-                (Some(500), Some(1000))
+                (Some(500), Some(700))
                 // (Some(0), Some(0)) // this is an incredibly stupid default state that causes the API to fail
             }
             None => (None, None),
@@ -213,7 +213,8 @@ async fn get_new_puzzle(request: ChessTacticRequest) -> Result<ChessTactic> {
         .await?
         .json()
         .await?;
-    dbg!(&tactic);
+    // dbg!(&tactic);
+    println!("GOT TACTIC...");
     return Ok(tactic);
 }
 
@@ -242,22 +243,26 @@ fn get_prompt(position: &Chess) -> String {
 }
 
 fn print_help() {
+    // println!("TESTING HELP FUNC");
+    // ptable!(["ABC", "DEFG", "HIJKLMN"],
+    //         ["foobar", "bar", "foo"],
+    //         ["foobar2", "bar2", "foo2"]);
     ptable!(
         [
-            "Any move, ex. Qxd7",
-            "Attempt to solve the tactic with the given move."
+            "any move, ex. qxd7",
+            "attempt to solve the tactic with the given move."
         ],
         [
-            "No input",
-            "Reveal the answer, and continue the tactic if there are more moves."
+            "no input",
+            "reveal the answer, and continue the tactic if there are more moves."
         ],
         [
             "'f' or 'fen'",
-            "Print out the current board, in FEN notation."
+            "print out the current board, in fen notation."
         ],
-        ["'s' or 'show'", "Show the current board."],
-        ["'r' or 'rating'", "Show the rating of the current tactic."],
-        ["'?' or 'help'", "Display this help."]
+        ["'s' or 'show'", "show the current board."],
+        ["'r' or 'rating'", "show the rating of the current tactic."],
+        ["'?' or 'help'", "display this help."]
     );
 }
 
