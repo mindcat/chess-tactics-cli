@@ -52,7 +52,7 @@ async fn main() -> Result<()> {
                         panic!("Could not parse rating, make sure it's in the form '500-1200'")
                     }
                 };
-                (Some(500), Some(700))
+                (Some(300), Some(500))
                 // (Some(0), Some(0)) // this is an incredibly stupid default state that causes the API to fail
             }
             None => (None, None),
